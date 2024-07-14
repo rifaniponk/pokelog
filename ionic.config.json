@@ -1,0 +1,8 @@
+{
+  "name": "Pokelog",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "id": "ec6975de"
+}
