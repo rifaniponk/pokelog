@@ -1,0 +1,28 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>{{pokemon ? pokemon.name : '...'}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" *ngIf="pokemon">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">{{pokemon.name}}</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-card>
+    <img [src]="pokemon.sprites.front_default" alt="{{ pokemon.name }}" />
+    <ion-card-header>
+      <ion-card-title>{{ pokemon.name }}</ion-card-title>
+      <ion-card-subtitle>ID: {{ pokemon.id }}</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <p>Height: {{ pokemon.height }}</p>
+      <p>Weight: {{ pokemon.weight }}</p>
+      <p>
+        Type:
+        <span *ngFor="let type of pokemon.types">{{ type.type.name }}</span>
+      </p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
